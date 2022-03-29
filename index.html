@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pokédex</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="" />
+	</head>
+	<body>
+		<figure class="logo">
+			<img src="img/pokémon-logo.png" alt="logo pokémon" />
+		</figure>
+
+		<section class="searcher">
+			<label for="search-bar">¿Qué pokémon quieres buscar?</label>
+			<input
+				type="text"
+				id="search-bar"
+				name="search-bar"
+				placeholder="E.g. Pikachu..."
+			/>
+		</section>
+
+		<section class="pokedex">
+			<div class="pokedex-left">
+				<div class="pokedex-left__circle circle-center">
+					<div
+						class="pokedex-left__small-circle circle-center-small"
+					></div>
+				</div>
+				<div class="circle-decoration decoration-top-left">
+					<div
+						class="circle-decoration small-decoration-top-left"
+					></div>
+				</div>
+				<div class="circle-decoration decoration-bottom-left">
+					<div
+						class="circle-decoration small-decoration-bottom-left"
+					></div>
+				</div>
+			</div>
+			<div class="pokedex-center">
+				<div class="pokedex-screen">
+					<div class="pokedex-screen-left">
+						<h2>PIKACHU</h2>
+						<figure>
+							<img src="img/pikachu.png" alt="" />
+						</figure>
+						<div class="main-information">
+							<div class="main-information__item">
+								<img
+									src="https://api.iconify.design/fa-solid/random.svg?color=%23071c21&height=25"
+									alt="type icon"
+								/>
+								<h3>Tipo</h3>
+								<p>Electric</p>
+							</div>
+							<div class="main-information__item">
+								<img
+									src="https://api.iconify.design/mdi/human-male-height.svg?color=%23071c21&height=25"
+									alt="height icon"
+								/>
+								<h3>Altura</h3>
+								<p>0.4 m</p>
+							</div>
+							<div class="main-information__item">
+								<img
+									src="https://api.iconify.design/fa-solid/weight.svg?color=%23071c21&height=25"
+									alt="weight icon"
+								/>
+								<h3>Peso</h3>
+								<p>6 kg</p>
+							</div>
+						</div>
+					</div>
+					<div class="pokedex-screen-right">
+						<div class="statistics">
+							<h3>Estadisticas</h3>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<input type="range" disabled value="70" />
+						</div>
+						<div class="movements">
+							<h3>Movimientos</h3>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+							<p>hp: 35</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pokedex-right">
+				<div class="pokedex-right__circle circle-center">
+					<div
+						class="pokedex-right__small-circle circle-center-small"
+					></div>
+				</div>
+				<div class="circle-decoration decoration-top-right">
+					<div
+						class="circle-decoration small-decoration-top-right"
+					></div>
+				</div>
+				<div class="circle-decoration decoration-bottom-right">
+					<div
+						class="circle-decoration small-decoration-bottom-right"
+					></div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
