@@ -6,22 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pokédex</title>
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="" />
 	</head>
 	<body>
 		<figure class="logo">
 			<img src="img/pokémon-logo.png" alt="logo pokémon" />
 		</figure>
 
-		<section class="searcher">
-			<label for="search-bar">¿Qué pokémon quieres buscar?</label>
-			<input
-				type="text"
-				id="search-bar"
-				name="search-bar"
-				placeholder="E.g. Pikachu..."
-			/>
-		</section>
+		<form class="searcher" onsubmit="fetchPokemon(); return false;">
+			<label for="pokemonInput">¿Qué pokémon quieres buscar?</label>
+			<div class="searcher-bar">
+				<input
+					type="search"
+					id="pokemonInput"
+					name="pokemonInput"
+					onkeypress=""
+					placeholder="E.g. Pikachu..."
+				/>
+				<button type="submit"></button>
+			</div>
+		</form>
 
 		<section class="pokedex">
 			<div class="pokedex-left">
@@ -44,9 +47,9 @@
 			<div class="pokedex-center">
 				<div class="pokedex-screen">
 					<div class="pokedex-screen-left">
-						<h2>PIKACHU</h2>
+						<h2 id="pokeName">PIKACHU</h2>
 						<figure>
-							<img src="img/pikachu.png" alt="" />
+							<img id="pokeImg" src="img/pikachu.png" alt="" />
 						</figure>
 						<div class="main-information">
 							<div class="main-information__item">
@@ -55,7 +58,7 @@
 									alt="type icon"
 								/>
 								<h3>Tipo</h3>
-								<p>Electric</p>
+								<p id="pokeType">Electric</p>
 							</div>
 							<div class="main-information__item">
 								<img
@@ -63,7 +66,7 @@
 									alt="height icon"
 								/>
 								<h3>Altura</h3>
-								<p>0.4 m</p>
+								<p><span id="pokeHeight">0.4</span> m</p>
 							</div>
 							<div class="main-information__item">
 								<img
@@ -71,28 +74,84 @@
 									alt="weight icon"
 								/>
 								<h3>Peso</h3>
-								<p>6 kg</p>
+								<p><span id="pokeWeight">6</span> kg</p>
 							</div>
 						</div>
 					</div>
 					<div class="pokedex-screen-right">
 						<div class="statistics">
 							<h3>Estadisticas</h3>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<input type="range" disabled value="70" />
+							<div class="statistics-container">
+								<div class="statistics-tags">
+									<p>HP:</p>
+									<p>ATK:</p>
+									<p>DEF:</p>
+									<p>SATK:</p>
+									<p>SDEF:</p>
+									<p>SPD:</p>
+								</div>
+								<div class="statistics-progressbars">
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="hp"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+											aria-valuenow="78"
+										></div>
+									</div>
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="attack"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+										></div>
+									</div>
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="defense"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+										></div>
+									</div>
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="sAttack"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+										></div>
+									</div>
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="sDefense"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+										></div>
+									</div>
+									<div class="statistics-progressbars__bar">
+										<div
+											class="statistics-progressbars__progress"
+											id="speed"
+											role="progressbar"
+											aria-valuemin="0"
+											aria-valuemax="200"
+										></div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="movements">
 							<h3>Movimientos</h3>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
-							<p>hp: 35</p>
+							<ul id="pokeMoves" class="movements-list"></ul>
 						</div>
 					</div>
 				</div>
@@ -115,5 +174,8 @@
 				</div>
 			</div>
 		</section>
+		<footer>
+			<script src="index.js"></script>
+		</footer>
 	</body>
 </html>
